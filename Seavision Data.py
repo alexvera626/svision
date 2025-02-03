@@ -83,8 +83,8 @@ for vessel in cleaned_vessels:
     }
     geojson["features"].append(feature)
 
-# Save the GeoJSON data to a file
-output_file = 'SeaVision_Data.geojson'
+# Save the GeoJSON data to a file inside the docs folder
+output_file = 'docs/SeaVision_Data.geojson'  # Ensure it's saved in the 'docs' folder
 with open(output_file, 'w') as f:
     json.dump(geojson, f, indent=4)
 
