@@ -24,5 +24,4 @@ jobs:
 
       - name: Run Seavision Data Script
         run: |
-          python Seavision_Data.py  # Runs your Python script (Seavision_Data.py)
-
+          python Seavision Data.py  # Runs your Python script (Seavision_Data.py)
