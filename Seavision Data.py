@@ -89,3 +89,4 @@ with open(output_file, 'w') as f:
     json.dump(geojson, f, indent=4)
 
 print(f"GeoJSON file has been saved as {output_file}")
+
