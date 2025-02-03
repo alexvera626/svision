@@ -28,11 +28,11 @@ jobs:
           python "Seavision Data.py"  # Runs your Python script (Seavision_Data.py)
 
       - name: Commit and push changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@github.com"
-          git add docs/SeaVision_Data.geojson
-          git commit -m "Update GeoJSON file"
-          git push https://github.com/alexvera626/svision.git HEAD:main
-        env:
-          GITHUB_TOKEN: ${{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}}  # Correct token reference
+  run: |
+    git config --global user.name "GitHub Actions"
+    git config --global user.email "github-actions@github.com"
+    git add docs/SeaVision_Data.geojson
+    git commit -m "Update GeoJSON file"
+    git push https://github.com/alexvera626/svision.git HEAD:main
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
