@@ -1,5 +1,6 @@
 import requests
 import json
+import csv
 from datetime import datetime, timezone
 
 # API URL and Parameters for 3 locations
@@ -84,9 +85,49 @@ for vessel in cleaned_vessels:
     geojson["features"].append(feature)
 
 # Save the GeoJSON data to a file inside the docs folder
-output_file = 'docs/SeaVision_Data.geojson'  # Ensure it's saved in the 'docs' folder
-with open(output_file, 'w') as f:
+geojson_file = 'docs/SeaVision_Data.geojson'  # Ensure it's saved in the 'docs' folder
+with open(geojson_file, 'w') as f:
     json.dump(geojson, f, indent=4)
 
-print(f"GeoJSON file has been saved as {output_file}")
+print(f"GeoJSON file has been saved as {geojson_file}")
 
+# Save the CSV data to a file inside the docs folder
+csv_file = 'docs/SeaVision_Data.csv'
+
+# Open CSV file to write
+with open(csv_file, mode='w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    
+    # Write CSV header (columns based on GeoJSON properties)
+    writer.writerow([
+        'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
+        'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
+    ])
+    
+    # Loop through GeoJSON features and write to CSV
+    for vessel in cleaned_vessels:
+        # Extract properties and coordinates
+        properties = vessel
+        coordinates = [vessel['longitude'], vessel['latitude']]
+        
+        # Write a row for each feature in the GeoJSON
+        writer.writerow([
+            properties['name'],
+            properties['mmsi'],
+            properties['imoNumber'],
+            properties['callSign'],
+            properties['cargo'],
+            properties['vesselType'],
+            properties['COG'],
+            properties['heading'],
+            properties['navStatus'],
+            properties['SOG'],
+            properties['timeOfFix'],
+            properties['length'],
+            properties['beam'],
+            coordinates[1],  # latitude
+            coordinates[0],  # longitude
+            current_time     # using current date and time pulled
+        ])
+
+print(f"CSV file has been saved as {csv_file}")
