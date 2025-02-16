@@ -1,11 +1,17 @@
+import os
 import requests
 import json
 import csv
 from datetime import datetime, timezone
 
+# Fetch the SeaVision API key from the environment
+api_key = os.getenv('SEAVISION_API_KEY')
+
+if api_key is None:
+    raise ValueError("API key is missing!")  # Ensure the API key is present
+
 # API URL and Parameters for 3 locations
 api_url = 'https://api.seavision.volpe.dot.gov/v1/vessels'
-api_key = 'tDbmrW2Etn5FV6JY4yMMC5QW1dAstsDL2Pt15JvH'  # Your API key
 
 # Parameters for the 3 different API calls
 params_list = [
@@ -25,12 +31,12 @@ all_vessels = []
 
 # Function to make the API call and get data
 def fetch_data(params):
-    try:
-        response = requests.get(api_url, headers=headers, params=params)
-        response.raise_for_status()  # Raise HTTPError for bad responses
+    response = requests.get(api_url, headers=headers, params=params)
+    
+    if response.status_code == 200:
         return response.json()  # Return JSON data
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching data for {params['latitude']}, {params['longitude']}: {e}")
+    else:
+        print(f"Failed to fetch data for {params['latitude']}, {params['longitude']}. Status code: {response.status_code}")
         return []
 
 # Get current date and time in UTC (Zulu format) using timezone-aware datetime
@@ -86,52 +92,48 @@ for vessel in cleaned_vessels:
 
 # Save the GeoJSON data to a file inside the docs folder
 geojson_file = 'docs/SeaVision_Data.geojson'  # Ensure it's saved in the 'docs' folder
-try:
-    with open(geojson_file, 'w') as f:
-        json.dump(geojson, f, indent=4)
-    print(f"GeoJSON file has been saved as {geojson_file}")
-except Exception as e:
-    print(f"Error saving GeoJSON file: {e}")
+with open(geojson_file, 'w') as f:
+    json.dump(geojson, f, indent=4)
+
+print(f"GeoJSON file has been saved as {geojson_file}")
 
 # Save the CSV data to a file inside the docs folder
 csv_file = 'docs/SeaVision_Data.csv'
 
 # Open CSV file to write
-try:
-    with open(csv_file, mode='w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
+with open(csv_file, mode='w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    
+    # Write CSV header (columns based on GeoJSON properties)
+    writer.writerow([
+        'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
+        'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
+    ])
+    
+    # Loop through GeoJSON features and write to CSV
+    for vessel in cleaned_vessels:
+        # Extract properties and coordinates
+        properties = vessel
+        coordinates = [vessel['longitude'], vessel['latitude']]
         
-        # Write CSV header (columns based on GeoJSON properties)
+        # Write a row for each feature in the GeoJSON
         writer.writerow([
-            'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
-            'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
+            properties['name'],
+            properties['mmsi'],
+            properties['imoNumber'],
+            properties['callSign'],
+            properties['cargo'],
+            properties['vesselType'],
+            properties['COG'],
+            properties['heading'],
+            properties['navStatus'],
+            properties['SOG'],
+            properties['timeOfFix'],
+            properties['length'],
+            properties['beam'],
+            coordinates[1],  # latitude
+            coordinates[0],  # longitude
+            current_time     # using current date and time pulled
         ])
-        
-        # Loop through GeoJSON features and write to CSV
-        for vessel in cleaned_vessels:
-            # Extract properties and coordinates
-            properties = vessel
-            coordinates = [vessel['longitude'], vessel['latitude']]
-            
-            # Write a row for each feature in the GeoJSON
-            writer.writerow([
-                properties['name'],
-                properties['mmsi'],
-                properties['imoNumber'],
-                properties['callSign'],
-                properties['cargo'],
-                properties['vesselType'],
-                properties['COG'],
-                properties['heading'],
-                properties['navStatus'],
-                properties['SOG'],
-                properties['timeOfFix'],
-                properties['length'],
-                properties['beam'],
-                coordinates[1],  # latitude
-                coordinates[0],  # longitude
-                current_time     # using current date and time pulled
-            ])
-    print(f"CSV file has been saved as {csv_file}")
-except Exception as e:
-    print(f"Error saving CSV file: {e}")
+
+print(f"CSV file has been saved as {csv_file}")
