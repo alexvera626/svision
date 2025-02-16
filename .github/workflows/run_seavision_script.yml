@@ -27,12 +27,21 @@ jobs:
         run: |
           python "Seavision Data.py"  # Runs your Python script
 
+      - name: Check git status
+        run: |
+          git status  # Check if files are modified
+
+      - name: Check git log
+        run: |
+          git log -1  # Check the last commit
+
       - name: Commit and push changes to GitHub
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
           git add docs/SeaVision_Data.geojson docs/SeaVision_Data.csv  # Add the GeoJSON and CSV files
-          git diff --exit-code || git commit -m "Update GeoJSON and CSV files with new vessel data"  # Commit if changes exist
+          git status  # Check if the files were staged for commit
+          git commit -m "Update GeoJSON and CSV files with new vessel data" || echo "No changes to commit"
           git push https://github.com/alexvera626/svision.git HEAD:main  # Push to the 'main' branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the GITHUB_TOKEN for authentication
