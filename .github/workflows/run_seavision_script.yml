@@ -7,7 +7,7 @@ on:
 
 jobs:
   run-script:
-    runs-on: [self-hosted, windows]  # Self-hosted runner first, Windows runner specifically, fallback to GitHub's hosted if self-hosted is unavailable
+    runs-on: windows-latest  # Use GitHub-hosted Windows runner
 
     steps:
       - name: Checkout code
