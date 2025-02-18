@@ -98,17 +98,17 @@ with open(geojson_file, 'w') as f:
 print(f"GeoJSON file has been saved as {geojson_file}")
 
 # Save the CSV data to a file inside the docs folder
-csv_file = 'docs/SeaVision_Data.csv'
+#csv_file = 'docs/SeaVision_Data.csv'
 
 # Open CSV file to write
-with open(csv_file, mode='w', newline='') as csvfile:
-    writer = csv.writer(csvfile)
+#with open(csv_file, mode='w', newline='') as csvfile:
+#    writer = csv.writer(csvfile)
     
     # Write CSV header (columns based on GeoJSON properties)
-    writer.writerow([
-        'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
-        'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
-    ])
+#    writer.writerow([
+#        'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
+#        'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
+#    ])
     
     # Loop through GeoJSON features and write to CSV
     for vessel in cleaned_vessels:
