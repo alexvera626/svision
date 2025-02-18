@@ -1,139 +1,127 @@
-import os
 import requests
 import json
-import csv
+import base64
+import logging
+import boto3
+import time
 from datetime import datetime, timezone
 
-# Fetch the SeaVision API key from the environment
-api_key = os.getenv('SEAVISION_API_KEY')
+# logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-if api_key is None:
-    raise ValueError("API key is missing!")  # Ensure the API key is present
+# GitHub Config (
+GITHUB_REPO = "alexvera626/svision" 
+GITHUB_FILE_PATH = "seavision_data.geojson"
+GITHUB_BRANCH = "main"
+GITHUB_API_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
 
-# API URL and Parameters for 3 locations
-api_url = 'https://api.seavision.volpe.dot.gov/v1/vessels'
 
-# Parameters for the 3 different API calls
-params_list = [
-    {'latitude': 34.110038, 'longitude': -119.209365, 'radius': 100, 'age': 1},
-    {'latitude': 34.16182, 'longitude': -120.27813, 'radius': 100, 'age': 1},
-    {'latitude': 35.03000, 'longitude': -122.23366, 'radius': 100, 'age': 1},
+#Token Securely from AWS Secrets Manager
+def get_github_token():
+    """Retrieves the GitHub token from AWS Secrets Manager."""
+    client = boto3.client("secretsmanager", region_name="us-west-1")  
+    try:
+        response = client.get_secret_value(SecretId="GITHUB_TOKEN")
+        if "SecretString" in response:
+            secret_data = json.loads(response["SecretString"])
+            return secret_data.get("GITHUB_TOKEN")  
+    except Exception as e:
+        logging.error(f"❌ Error retrieving GitHub token: {e}")
+        return None
+
+# Secure GitHub Token
+GITHUB_TOKEN = get_github_token()
+if not GITHUB_TOKEN:
+    logging.error("❌ GitHub token could not be retrieved!")
+
+# SeaVision API Configuration/key/To do use aws secrets managers
+SEAVISION_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  
+API_URL = "https://api.seavision.volpe.dot.gov/v1/vessels"
+#2 keys more locations?
+LOCATIONS = [
+    {"latitude": 34.110038, "longitude": -119.209365, "radius": 100, "age": 1},
+    {"latitude": 34.16182, "longitude": -120.27813, "radius": 100, "age": 1},
+    {"latitude": 35.03000, "longitude": -122.23366, "radius": 100, "age": 1},
 ]
 
-# Headers for the API request
-headers = {
-    'accept': 'application/json',
-    'x-api-key': api_key
-}
+# Fetch vessel data from SeaVision API
+def fetch_seavision_data():
+    """Fetches vessel data from SeaVision API and converts it to GeoJSON."""
+    headers = {"accept": "application/json", "x-api-key": SEAVISION_API_KEY}
+    all_vessels = []
 
-# List to hold all vessel data
-all_vessels = []
+    for params in LOCATIONS:
+        response = requests.get(API_URL, headers=headers, params=params)
+        if response.status_code == 200:
+            all_vessels.extend(response.json())
+        else:
+            logging.error(f"❌ API Error {response.status_code}: {response.text}")
 
-# Function to make the API call and get data
-def fetch_data(params):
-    response = requests.get(api_url, headers=headers, params=params)
-    
-    if response.status_code == 200:
-        return response.json()  # Return JSON data
-    else:
-        print(f"Failed to fetch data for {params['latitude']}, {params['longitude']}. Status code: {response.status_code}")
-        return []
+    # Remove duplicates using 'mmsi' as a unique key
+    unique_vessels = {v["mmsi"]: v for v in all_vessels}
+    cleaned_vessels = list(unique_vessels.values())
 
-# Get current date and time in UTC (Zulu format) using timezone-aware datetime
-current_time = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-
-# Loop through the list of parameters and fetch data
-for params in params_list:
-    print(f"Fetching data for {params['latitude']}, {params['longitude']}")
-    data = fetch_data(params)
-    all_vessels.extend(data)  # Add the vessels from this call to the list
-
-# Remove duplicates based on the 'mmsi' field
-unique_vessels = {}
-for vessel in all_vessels:
-    unique_vessels[vessel['mmsi']] = vessel  # Using MMSI as a unique key
-
-# Now 'unique_vessels' contains only unique vessels
-cleaned_vessels = list(unique_vessels.values())
-
-# Convert to GeoJSON format
-geojson = {
-    "type": "FeatureCollection",
-    "name": "SeaVision Data",
-    "features": []
-}
-
-# Add each vessel as a feature in the GeoJSON
-for vessel in cleaned_vessels:
-    feature = {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [vessel['longitude'], vessel['latitude']]
-        },
-        "properties": {
-            "name": vessel['name'],
-            "mmsi": vessel['mmsi'],
-            "imoNumber": vessel['imoNumber'],
-            "callSign": vessel['callSign'],
-            "cargo": vessel['cargo'],
-            "vesselType": vessel['vesselType'],
-            "COG": vessel['COG'],
-            "heading": vessel['heading'],
-            "navStatus": vessel['navStatus'],
-            "SOG": vessel['SOG'],
-            "timeOfFix": vessel['timeOfFix'],
-            "length": vessel['length'],
-            "beam": vessel['beam'],
-            "datePulled": current_time,  # Added the datePulled field in Zulu format
-        }
+    # Convert to GeoJSON format
+    return {
+        "type": "FeatureCollection",
+        "name": "SeaVision Data",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [v["longitude"], v["latitude"]]},
+                "properties": {
+                    "name": v["name"],
+                    "mmsi": v["mmsi"],
+                    "imoNumber": v["imoNumber"],
+                    "callSign": v["callSign"],
+                    "cargo": v["cargo"],
+                    "vesselType": v["vesselType"],
+                    "COG": v["COG"],
+                    "heading": v["heading"],
+                    "navStatus": v["navStatus"],
+                    "SOG": v["SOG"],
+                    "timeOfFix": v["timeOfFix"],
+                    "length": v["length"],
+                    "beam": v["beam"],
+                    "datePulled": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                },
+            }
+            for v in cleaned_vessels
+        ],
     }
-    geojson["features"].append(feature)
 
-# Save the GeoJSON data to a file inside the docs folder
-geojson_file = 'docs/SeaVision_Data.geojson'  # Ensure it's saved in the 'docs' folder
-with open(geojson_file, 'w') as f:
-    json.dump(geojson, f, indent=4)
+# Fetch current file SHA from GitHub
+def get_file_sha(headers):
+    """Retrieves the SHA of the existing file for GitHub updates."""
+    response = requests.get(GITHUB_API_URL, headers=headers)
+    return response.json().get("sha") if response.status_code == 200 else None
 
-print(f"GeoJSON file has been saved as {geojson_file}")
+# Upload data to GitHub
+def upload_to_github(geojson_data):
+    """Uploads or updates the SeaVision GeoJSON file in GitHub repository."""
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": "SeaVision-Data-Bot",
+    }
 
-# Save the CSV data to a file inside the docs folder
-#csv_file = 'docs/SeaVision_Data.csv'
+    json_data = json.dumps(geojson_data, indent=4)
+    file_sha = get_file_sha(headers)
 
-# Open CSV file to write
-#with open(csv_file, mode='w', newline='') as csvfile:
-#    writer = csv.writer(csvfile)
-    
-    # Write CSV header (columns based on GeoJSON properties)
-#    writer.writerow([
-#        'name', 'mmsi', 'imoNumber', 'callSign', 'cargo', 'vesselType', 
-#        'COG', 'heading', 'navStatus', 'SOG', 'timeOfFix', 'length', 'beam', 'latitude', 'longitude', 'datePulled'
-#    ])
-    
-    # Loop through GeoJSON features and write to CSV
-    for vessel in cleaned_vessels:
-        # Extract properties and coordinates
-        properties = vessel
-        coordinates = [vessel['longitude'], vessel['latitude']]
-        
-        # Write a row for each feature in the GeoJSON
-        writer.writerow([
-            properties['name'],
-            properties['mmsi'],
-            properties['imoNumber'],
-            properties['callSign'],
-            properties['cargo'],
-            properties['vesselType'],
-            properties['COG'],
-            properties['heading'],
-            properties['navStatus'],
-            properties['SOG'],
-            properties['timeOfFix'],
-            properties['length'],
-            properties['beam'],
-            coordinates[1],  # latitude
-            coordinates[0],  # longitude
-            current_time     # using current date and time pulled
-        ])
+    payload = {
+        "message": f"🔄 Auto-update SeaVision GeoJSON [{time.strftime('%Y-%m-%d %H:%M:%S')}]",
+        "content": base64.b64encode(json_data.encode()).decode(),
+        "branch": GITHUB_BRANCH,
+        **({"sha": file_sha} if file_sha else {}),
+    }
 
-print(f"CSV file has been saved as {csv_file}")
+    response = requests.put(GITHUB_API_URL, headers=headers, json=payload)
+    logging.info(f"📬 GitHub API Response: {response.status_code} - {response.text}")
+
+#AWS Lambda Handler
+def lambda_handler(event, context):
+    """AWS Lambda entry point."""
+    geojson_output = fetch_seavision_data()
+    upload_to_github(geojson_output)
+    return {"statusCode": 200, "body": "Success"}
+
