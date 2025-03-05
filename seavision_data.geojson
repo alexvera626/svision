@@ -1,5 +1,1566 @@
 {
     "type": "FeatureCollection",
     "name": "SeaVision Data",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.616343,
+                    33.58564
+                ]
+            },
+            "properties": {
+                "name": "Ps Trieste",
+                "mmsi": 229957000,
+                "imoNumber": 9473054,
+                "callSign": "9HA2823",
+                "cargo": "9-NoInfo",
+                "vesselType": "8-Tanker",
+                "COG": 348.6,
+                "heading": 49,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.6,
+                "timeOfFix": 1741195317,
+                "length": 244,
+                "beam": 42,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.998053,
+                    33.763078
+                ]
+            },
+            "properties": {
+                "name": "Sea Venture",
+                "mmsi": 303422000,
+                "imoNumber": 9347413,
+                "callSign": "WDC5952",
+                "cargo": "0-AllShips",
+                "vesselType": "9-Other",
+                "COG": 204.5,
+                "heading": 195,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 2.7,
+                "timeOfFix": 1741195315,
+                "length": 106,
+                "beam": 21,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.295867,
+                    33.63523
+                ]
+            },
+            "properties": {
+                "name": "Hyperion Ray",
+                "mmsi": 311000322,
+                "imoNumber": 9690559,
+                "callSign": "C6BO8",
+                "cargo": "0-AllShips",
+                "vesselType": "7-Cargo",
+                "COG": 271.7,
+                "heading": 274,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 9.6,
+                "timeOfFix": 1741195319,
+                "length": 200,
+                "beam": 36,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.398515,
+                    33.847008
+                ]
+            },
+            "properties": {
+                "name": "Baywatch17",
+                "mmsi": 338118971,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "50-Pilot",
+                "COG": 267.2,
+                "heading": 267.2,
+                "navStatus": "15-NotDefined",
+                "SOG": 0.1,
+                "timeOfFix": 1741195319,
+                "length": 10,
+                "beam": 4,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.212387,
+                    33.769993
+                ]
+            },
+            "properties": {
+                "name": "Sea Guardian",
+                "mmsi": 338140889,
+                "imoNumber": 0,
+                "callSign": "WTT9665",
+                "cargo": "0-AllShips",
+                "vesselType": "34-Diving",
+                "COG": 248.6,
+                "heading": 248.6,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195318,
+                "length": 16,
+                "beam": 5,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.525165,
+                    34.026638
+                ]
+            },
+            "properties": {
+                "name": "Baywatch11",
+                "mmsi": 338145686,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 315,
+                "heading": 315,
+                "navStatus": "15-NotDefined",
+                "SOG": 14.6,
+                "timeOfFix": 1741195320,
+                "length": 0,
+                "beam": 0,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.391385,
+                    33.419388
+                ]
+            },
+            "properties": {
+                "name": "Baywatch18",
+                "mmsi": 338145697,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "50-Pilot",
+                "COG": 292.7,
+                "heading": 292.7,
+                "navStatus": "15-NotDefined",
+                "SOG": 21.8,
+                "timeOfFix": 1741195317,
+                "length": 10,
+                "beam": 3,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.454835,
+                    33.975355
+                ]
+            },
+            "properties": {
+                "name": "Mojito",
+                "mmsi": 338210835,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "36-Sailing",
+                "COG": 256.3,
+                "heading": 256.3,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195319,
+                "length": 12,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.449472,
+                    33.975503
+                ]
+            },
+            "properties": {
+                "name": "Adelante",
+                "mmsi": 338320694,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "36-Sailing",
+                "COG": 134.3,
+                "heading": 134.3,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195316,
+                "length": 20,
+                "beam": 5,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.6898,
+                    34.405818
+                ]
+            },
+            "properties": {
+                "name": "Reel Inn",
+                "mmsi": 338327349,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 20,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.114053,
+                    33.756437
+                ]
+            },
+            "properties": {
+                "name": "Last Dance",
+                "mmsi": 338335196,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": 204.3,
+                "heading": 204.3,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195316,
+                "length": 0,
+                "beam": 0,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.280683,
+                    33.723395
+                ]
+            },
+            "properties": {
+                "name": "V.a.point Vicente",
+                "mmsi": 338366226,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 219.3,
+                "heading": 225,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 23,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.187335,
+                    33.759773
+                ]
+            },
+            "properties": {
+                "name": "Odessa",
+                "mmsi": 338395124,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 10,
+                "beam": 3,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.279667,
+                    33.723833
+                ]
+            },
+            "properties": {
+                "name": "Aquila",
+                "mmsi": 366554000,
+                "imoNumber": 0,
+                "callSign": "WDF8873",
+                "cargo": "9-NoInfo",
+                "vesselType": "6-Passenger",
+                "COG": 42,
+                "heading": 249,
+                "navStatus": "5-Moored",
+                "SOG": 0,
+                "timeOfFix": 1741195320,
+                "length": 20,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.140605,
+                    33.74043
+                ]
+            },
+            "properties": {
+                "name": "Hermosa",
+                "mmsi": 366652000,
+                "imoNumber": 0,
+                "callSign": "WCY7546",
+                "cargo": "9-NoInfo",
+                "vesselType": "6-Passenger",
+                "COG": 311,
+                "heading": 148,
+                "navStatus": "5-Moored",
+                "SOG": 3,
+                "timeOfFix": 1741195317,
+                "length": 20,
+                "beam": 5,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.277875,
+                    33.740208
+                ]
+            },
+            "properties": {
+                "name": "Master",
+                "mmsi": 366755010,
+                "imoNumber": 9188532,
+                "callSign": "WCY6528",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 350.3,
+                "heading": 6,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195316,
+                "length": 30,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.446572,
+                    33.971928
+                ]
+            },
+            "properties": {
+                "name": "New Del Mar",
+                "mmsi": 366855060,
+                "imoNumber": 0,
+                "callSign": "WDA8503",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 36.1,
+                "heading": 36.1,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195318,
+                "length": 23,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.922265,
+                    33.618252
+                ]
+            },
+            "properties": {
+                "name": "Endless Dreams",
+                "mmsi": 366872980,
+                "imoNumber": 8975677,
+                "callSign": "WDH2906",
+                "cargo": "0-AllShips",
+                "vesselType": "6-Passenger",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195320,
+                "length": 38,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.269333,
+                    33.599833
+                ]
+            },
+            "properties": {
+                "name": "Super Express",
+                "mmsi": 366943940,
+                "imoNumber": 0,
+                "callSign": "WAB6372",
+                "cargo": "0-AllShips",
+                "vesselType": "4-HSC",
+                "COG": 190.6,
+                "heading": 190.6,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 25.7,
+                "timeOfFix": 1741195319,
+                "length": 45,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.16134,
+                    33.742662
+                ]
+            },
+            "properties": {
+                "name": "Cabrillo",
+                "mmsi": 367004260,
+                "imoNumber": 0,
+                "callSign": "WBU7354",
+                "cargo": "0-AllShips",
+                "vesselType": "52-Tug",
+                "COG": 358.7,
+                "heading": 358.7,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195318,
+                "length": 19,
+                "beam": 3,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.223922,
+                    33.753233
+                ]
+            },
+            "properties": {
+                "name": "Debra C",
+                "mmsi": 367027570,
+                "imoNumber": 7129817,
+                "callSign": "WDM8821",
+                "cargo": "0-AllShips",
+                "vesselType": "32-BigTow",
+                "COG": 271.3,
+                "heading": 249,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 0,
+                "beam": 0,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.183702,
+                    33.622328
+                ]
+            },
+            "properties": {
+                "name": "Knox T",
+                "mmsi": 367104040,
+                "imoNumber": 0,
+                "callSign": "WDC9569",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 131,
+                "heading": 132,
+                "navStatus": "15-NotDefined",
+                "SOG": 18.1,
+                "timeOfFix": 1741195320,
+                "length": 32,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.269005,
+                    34.349992
+                ]
+            },
+            "properties": {
+                "name": "Ryan T",
+                "mmsi": 367104050,
+                "imoNumber": 8982591,
+                "callSign": "WDC9570",
+                "cargo": "0-AllShips",
+                "vesselType": "6-Passenger",
+                "COG": 81.4,
+                "heading": 81.4,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 17.1,
+                "timeOfFix": 1741195320,
+                "length": 31,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.62254,
+                    34.332528
+                ]
+            },
+            "properties": {
+                "name": "Alan T",
+                "mmsi": 367104060,
+                "imoNumber": 0,
+                "callSign": "WDC9571",
+                "cargo": "9-NoInfo",
+                "vesselType": "1-Reserved",
+                "COG": 159,
+                "heading": 273,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.1,
+                "timeOfFix": 1741195318,
+                "length": 33,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.273547,
+                    33.749902
+                ]
+            },
+            "properties": {
+                "name": "Avalon Express",
+                "mmsi": 367192940,
+                "imoNumber": 896789000,
+                "callSign": "WDD7919",
+                "cargo": "0-AllShips",
+                "vesselType": "4-HSC",
+                "COG": 275.5,
+                "heading": 275.5,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195316,
+                "length": 33,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.426417,
+                    33.5076
+                ]
+            },
+            "properties": {
+                "name": "Miss Christi",
+                "mmsi": 367311590,
+                "imoNumber": 0,
+                "callSign": "WDK4720",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 219.3,
+                "heading": 219.3,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 16.3,
+                "timeOfFix": 1741195316,
+                "length": 15,
+                "beam": 5,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.278163,
+                    33.739732
+                ]
+            },
+            "properties": {
+                "name": "Delta Billie",
+                "mmsi": 367401030,
+                "imoNumber": 9562207,
+                "callSign": "WDE8059",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 203.5,
+                "heading": 8,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.1,
+                "timeOfFix": 1741195319,
+                "length": 30,
+                "beam": 12,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.453,
+                    33.911958
+                ]
+            },
+            "properties": {
+                "name": "Lucy Foss",
+                "mmsi": 367408930,
+                "imoNumber": 1219510,
+                "callSign": "WDE8734",
+                "cargo": "0-AllShips",
+                "vesselType": "53-Tender",
+                "COG": 106.7,
+                "heading": 266,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.2,
+                "timeOfFix": 1741195319,
+                "length": 20,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.142233,
+                    33.596903
+                ]
+            },
+            "properties": {
+                "name": "Isabel L",
+                "mmsi": 367471080,
+                "imoNumber": 0,
+                "callSign": "WDF6141",
+                "cargo": "2-HazCatY",
+                "vesselType": "4-HSC",
+                "COG": 269.4,
+                "heading": 40,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.2,
+                "timeOfFix": 1741195319,
+                "length": 0,
+                "beam": 0,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.271572,
+                    33.729332
+                ]
+            },
+            "properties": {
+                "name": "Wyatt M",
+                "mmsi": 367492920,
+                "imoNumber": 8978710,
+                "callSign": "WDF8246",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 169.8,
+                "heading": 169.8,
+                "navStatus": "15-NotDefined",
+                "SOG": 6.7,
+                "timeOfFix": 1741195320,
+                "length": 31,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.270687,
+                    33.734505
+                ]
+            },
+            "properties": {
+                "name": "Marie Cheramie",
+                "mmsi": 367533290,
+                "imoNumber": 8964862,
+                "callSign": "WDG4131",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 28.5,
+                "heading": 28.5,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195319,
+                "length": 46,
+                "beam": 26,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.257018,
+                    33.763713
+                ]
+            },
+            "properties": {
+                "name": "Barbara J Mulholland",
+                "mmsi": 367569830,
+                "imoNumber": 0,
+                "callSign": "WDG7687",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 310.7,
+                "heading": 210,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195320,
+                "length": 30,
+                "beam": 12,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.314332,
+                    33.348432
+                ]
+            },
+            "properties": {
+                "name": "Sentinel",
+                "mmsi": 367576110,
+                "imoNumber": 0,
+                "callSign": "WDG8305",
+                "cargo": "0-AllShips",
+                "vesselType": "6-Passenger",
+                "COG": 194,
+                "heading": 194,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.1,
+                "timeOfFix": 1741195320,
+                "length": 27,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.280533,
+                    33.724967
+                ]
+            },
+            "properties": {
+                "name": "Freedom",
+                "mmsi": 367621160,
+                "imoNumber": 0,
+                "callSign": "WDH4766",
+                "cargo": "0-AllShips",
+                "vesselType": "30-Fishing",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 24,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.450055,
+                    33.90832
+                ]
+            },
+            "properties": {
+                "name": "Lela Franco",
+                "mmsi": 367678850,
+                "imoNumber": 101258229,
+                "callSign": "WDI2504",
+                "cargo": "0-AllShips",
+                "vesselType": "9-Other",
+                "COG": 33.8,
+                "heading": 75,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.1,
+                "timeOfFix": 1741195315,
+                "length": 24,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.314457,
+                    33.34925
+                ]
+            },
+            "properties": {
+                "name": "Catalina Duke",
+                "mmsi": 367681720,
+                "imoNumber": 8986133,
+                "callSign": "WDI2784",
+                "cargo": "0-AllShips",
+                "vesselType": "6-Passenger",
+                "COG": 110.5,
+                "heading": 110.5,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.2,
+                "timeOfFix": 1741195317,
+                "length": 25,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.072598,
+                    33.683698
+                ]
+            },
+            "properties": {
+                "name": "Ruby J",
+                "mmsi": 367683830,
+                "imoNumber": 0,
+                "callSign": "WDI2989",
+                "cargo": "0-AllShips",
+                "vesselType": "38-Reserved",
+                "COG": 316.7,
+                "heading": 316.7,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 14.4,
+                "timeOfFix": 1741195319,
+                "length": 23,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.223992,
+                    33.753675
+                ]
+            },
+            "properties": {
+                "name": "Kelly C",
+                "mmsi": 367693690,
+                "imoNumber": 0,
+                "callSign": "WDI3956",
+                "cargo": "0-AllShips",
+                "vesselType": "32-BigTow",
+                "COG": 324.9,
+                "heading": 258,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 24,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.273982,
+                    33.72801
+                ]
+            },
+            "properties": {
+                "name": "La Espada",
+                "mmsi": 367724740,
+                "imoNumber": 8793328,
+                "callSign": "WDI7035",
+                "cargo": "9-NoInfo",
+                "vesselType": "6-Passenger",
+                "COG": 0,
+                "heading": 0,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 25,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -120.295642,
+                    34.332332
+                ]
+            },
+            "properties": {
+                "name": "Blarney",
+                "mmsi": 367744470,
+                "imoNumber": 9068809,
+                "callSign": "WDI9019",
+                "cargo": "0-AllShips",
+                "vesselType": "32-BigTow",
+                "COG": 110.3,
+                "heading": 106,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 5.7,
+                "timeOfFix": 1741195316,
+                "length": 30,
+                "beam": 8,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.212542,
+                    33.770683
+                ]
+            },
+            "properties": {
+                "name": "Lillian Foss",
+                "mmsi": 368010330,
+                "imoNumber": 0,
+                "callSign": "WDJ7811",
+                "cargo": "0-AllShips",
+                "vesselType": "52-Tug",
+                "COG": 322.2,
+                "heading": 63,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195319,
+                "length": 28,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.231373,
+                    33.735073
+                ]
+            },
+            "properties": {
+                "name": "Assateague",
+                "mmsi": 368020980,
+                "imoNumber": 9816892,
+                "callSign": "WDJ8905",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 190,
+                "heading": 142,
+                "navStatus": "1-AtAnchor",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 145,
+                "beam": 17,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.215673,
+                    33.747232
+                ]
+            },
+            "properties": {
+                "name": "Lb Pilot Boat  Orion",
+                "mmsi": 368024740,
+                "imoNumber": 0,
+                "callSign": "WDJ9306",
+                "cargo": "0-AllShips",
+                "vesselType": "50-Pilot",
+                "COG": 84.6,
+                "heading": 100,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 21,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.90122,
+                    33.612013
+                ]
+            },
+            "properties": {
+                "name": "Tt Amore",
+                "mmsi": 368032910,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 23,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.279513,
+                    33.723777
+                ]
+            },
+            "properties": {
+                "name": "Kin Ship",
+                "mmsi": 368064650,
+                "imoNumber": 0,
+                "callSign": "WDK5421",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": -1,
+                "heading": -1,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195316,
+                "length": 26,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.278035,
+                    33.739875
+                ]
+            },
+            "properties": {
+                "name": "Delta Teresa",
+                "mmsi": 368084540,
+                "imoNumber": 0,
+                "callSign": "WDK7444",
+                "cargo": "0-AllShips",
+                "vesselType": "52-Tug",
+                "COG": 276.6,
+                "heading": 7,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 28,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.261293,
+                    33.730868
+                ]
+            },
+            "properties": {
+                "name": "Darell Hiatt",
+                "mmsi": 368133450,
+                "imoNumber": 1301246,
+                "callSign": "WDL4645",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 22.7,
+                "heading": 255,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 27,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.215658,
+                    33.747303
+                ]
+            },
+            "properties": {
+                "name": "Lb Pilot Polaris 3",
+                "mmsi": 368159190,
+                "imoNumber": 0,
+                "callSign": "WDL7326",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 34.2,
+                "heading": 34.2,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0,
+                "timeOfFix": 1741195319,
+                "length": 21,
+                "beam": 6,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.278442,
+                    33.719313
+                ]
+            },
+            "properties": {
+                "name": "Mixed Nutz",
+                "mmsi": 368285250,
+                "imoNumber": 0,
+                "callSign": "WDN4905",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": 343.3,
+                "heading": 13,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195318,
+                "length": 17,
+                "beam": 5,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.221308,
+                    33.766775
+                ]
+            },
+            "properties": {
+                "name": "Iver Foss",
+                "mmsi": 368351000,
+                "imoNumber": 7638478,
+                "callSign": "WYE6442",
+                "cargo": "0-AllShips",
+                "vesselType": "31-Towing",
+                "COG": 13.5,
+                "heading": 21,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 6.1,
+                "timeOfFix": 1741195318,
+                "length": 30,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.224263,
+                    33.74563
+                ]
+            },
+            "properties": {
+                "name": "Marmac 304",
+                "mmsi": 368351350,
+                "imoNumber": 0,
+                "callSign": "WDP4105",
+                "cargo": "9-NoInfo",
+                "vesselType": "0-Unknown",
+                "COG": 101.3,
+                "heading": 11,
+                "navStatus": "15-NotDefined",
+                "SOG": 0,
+                "timeOfFix": 1741195315,
+                "length": 90,
+                "beam": 46,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -117.69558,
+                    33.459027
+                ]
+            },
+            "properties": {
+                "name": "Seanut",
+                "mmsi": 368392330,
+                "imoNumber": 0,
+                "callSign": "WDP8690",
+                "cargo": "0-AllShips",
+                "vesselType": "37-Pleasure",
+                "COG": 174,
+                "heading": 105,
+                "navStatus": "5-Moored",
+                "SOG": 0,
+                "timeOfFix": 1741195317,
+                "length": 22,
+                "beam": 7,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.903045,
+                    33.045663
+                ]
+            },
+            "properties": {
+                "name": "Rsc3",
+                "mmsi": 369970763,
+                "imoNumber": 0,
+                "callSign": "",
+                "cargo": "0-AllShips",
+                "vesselType": "35-MilOps",
+                "COG": 288.4,
+                "heading": 288.4,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 3,
+                "timeOfFix": 1741195318,
+                "length": 35,
+                "beam": 10,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.259292,
+                    34.070615
+                ]
+            },
+            "properties": {
+                "name": "Sm Yantian",
+                "mmsi": 440189000,
+                "imoNumber": 9312949,
+                "callSign": "D7FS",
+                "cargo": "0-AllShips",
+                "vesselType": "7-Cargo",
+                "COG": 294.5,
+                "heading": 293,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 13.4,
+                "timeOfFix": 1741195317,
+                "length": 304,
+                "beam": 40,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.65515,
+                    33.6197
+                ]
+            },
+            "properties": {
+                "name": "Wan Hai 723",
+                "mmsi": 563142800,
+                "imoNumber": 9398254,
+                "callSign": "9V7326",
+                "cargo": "3-HazCatZ",
+                "vesselType": "7-Cargo",
+                "COG": 274,
+                "heading": 270,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 11.4,
+                "timeOfFix": 1741195317,
+                "length": 304,
+                "beam": 40,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.33945,
+                    34.056615
+                ]
+            },
+            "properties": {
+                "name": "Forever Conviviality",
+                "mmsi": 563191900,
+                "imoNumber": 9952103,
+                "callSign": "9V8390",
+                "cargo": "0-AllShips",
+                "vesselType": "8-Tanker",
+                "COG": 105.3,
+                "heading": 102,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 11.6,
+                "timeOfFix": 1741195316,
+                "length": 183,
+                "beam": 32,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -119.155025,
+                    34.02181
+                ]
+            },
+            "properties": {
+                "name": "Ym Utility",
+                "mmsi": 636013692,
+                "imoNumber": 9337470,
+                "callSign": "A8OR7",
+                "cargo": "4-HazCatOS",
+                "vesselType": "7-Cargo",
+                "COG": 297.8,
+                "heading": 298,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 12.6,
+                "timeOfFix": 1741195318,
+                "length": 333,
+                "beam": 42,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.28931,
+                    33.42664
+                ]
+            },
+            "properties": {
+                "name": "Aqualiberty",
+                "mmsi": 636015174,
+                "imoNumber": 9592226,
+                "callSign": "A8ZC3",
+                "cargo": "9-NoInfo",
+                "vesselType": "8-Tanker",
+                "COG": 265.5,
+                "heading": 175,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 0.4,
+                "timeOfFix": 1741195317,
+                "length": 249,
+                "beam": 44,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -121.2885,
+                    34.674172
+                ]
+            },
+            "properties": {
+                "name": "Oregon Highway",
+                "mmsi": 352929000,
+                "imoNumber": 9381665,
+                "callSign": "3ENO7",
+                "cargo": "0-AllShips",
+                "vesselType": "7-Cargo",
+                "COG": 148,
+                "heading": 149,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 15.5,
+                "timeOfFix": 1741195316,
+                "length": 199,
+                "beam": 32,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.839218,
+                    35.519502
+                ]
+            },
+            "properties": {
+                "name": "Ever Liberal",
+                "mmsi": 235102678,
+                "imoNumber": 9604160,
+                "callSign": "2HDG2",
+                "cargo": "1-HazCatX",
+                "vesselType": "7-Cargo",
+                "COG": 125.9,
+                "heading": 126,
+                "navStatus": "0-Underway(Engine)",
+                "SOG": 16.4,
+                "timeOfFix": 1741195315,
+                "length": 335,
+                "beam": 46,
+                "datePulled": "2025-03-05T17:22:19Z"
+            }
+        }
+    ]
 }
